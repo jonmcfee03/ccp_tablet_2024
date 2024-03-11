@@ -194,6 +194,19 @@ b {
     align-self: center;
 }
 
+.bullet-points-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.bullet-points-ordered {
+    padding-left: 30%;
+}
+
+.bullet-points-unordered {
+    padding-left: 5vw;
+}
+
 @media only screen and (min-width: 800px) {
     .item-grid {
         grid-template-columns: auto auto;
@@ -209,6 +222,17 @@ b {
     }
     
     .bullet-points {
-        padding-left: 25vw;
+        padding-left: 10vw;
     }
+}
+
+.instagram-embed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instagram-h3 {
+    padding-bottom: 25px;
+    text-align: center;
 }
