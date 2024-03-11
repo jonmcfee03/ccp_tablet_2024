@@ -1,12 +1,18 @@
 html {
-    background: lightgray;
+    background: #B3E5FC;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    color: #333333;
 }
 
 h1 {
     text-align: center;
     font-size: 36px;
     font-weight: bolder;
-    padding: 10px;
+    /* this is so the nav bar does not hide h1 */
+    padding: 60px 10px 10px 10px;
 }
 
 h2 {
@@ -37,6 +43,7 @@ b {
     font-weight: bold;
 }
 
+
 .recipes {
     padding: 25px;
 }
@@ -59,7 +66,25 @@ b {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #0288D1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* tablet view has nav bar at bottom */
+@media screen and (min-width: 800px) {
+    h1 {
+        padding: 10px;
+    }
+    .nav-grid-container {
+        top: auto;
+        bottom: 0px;
+    }
+    main {
+        padding-bottom: 50px;
+    }
 }
 
 .nav-grid-container > li {
@@ -73,12 +98,13 @@ b {
     padding: 8px;
     text-decoration: none;
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: #FFFFFF;
 }
 
 @media (prefers-reduced-motion: no-preference) {
     .nav-grid-container a:hover:not(.active), .nav-grid-container a:focus:not(.active) {
-        background-color: rgb(99, 99, 99);
+        background-color: #4FC3F7;
+        transition: background-color 0.3s ease;
     }
 }
 
@@ -110,14 +136,15 @@ b {
 
 .likes-list {
     text-align: center;
+    padding-bottom: 25px;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     justify-content: space-around;
     gap: 0.5rem;
-    padding: 40px;
+    padding: 0 40px 40px 40px;
 }
 
 .grid-container div {
@@ -125,7 +152,6 @@ b {
 }
 
 .grid-container > h2, .grid-container > .photo-gallery, .grid-container > h3 {
-    grid-column: 1 / span 2;
     text-align: center;
 }
 
@@ -138,9 +164,22 @@ b {
     width: 100%;
 }
 
+.grid-container > p, .grid-container > h2 {
+    padding: 5px;
+}
+
 @media only screen and (min-width: 800px) {
+    .grid-container {
+        grid-template-columns: auto auto;
+        justify-content: center;
+    }
+    .grid-container > h2, .grid-container > .photo-gallery, .grid-container > h3 {
+        grid-column: 1 / span 2;
+
+    }
     .grid-container img, .grid-container video, .img-desc > p {
-        width: 400px;
+        width: 80%;
+        margin: auto;
     }
 }
 
